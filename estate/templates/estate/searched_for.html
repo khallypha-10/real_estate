@@ -1,0 +1,43 @@
+{% extends 'estate/navbar.html' %}
+{% block content %}
+
+    {% if searched %}
+        <h3>You searched for '{{searched}}'</h3>
+        <br/>
+        {% for name in names %}
+        <div class="row service-v1 margin-bottom-40">
+            
+                <div class="col-md-4 md-margin-bottom-40">
+                    
+                        <div class="card small">
+                            
+                            <div class="card-image">
+                                 <img class="img-responsive" src={{name.image.url}} alt="">   
+                            </div>
+                            <div class="card-content"> 
+                                <p>
+                                    <span class="price">${{name.price}}</span>
+                                    <h4>{{name.name}}</h4>
+                                    <h5>{{name.adress}}</h5>
+                                    <a href="{% url 'detail' name.id %}" class="btn btn-details">Details</a>
+                                </p>
+                            </div>
+                            
+                        </div>   
+                           
+                
+                         
+                </div>
+            
+            
+        </div>
+        {% endfor %}
+
+
+    {% else %}
+
+        <h3>You didn't search anything</h3>
+    {% endif %}
+
+{% endblock content %}
+

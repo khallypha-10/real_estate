@@ -1,0 +1,35 @@
+{% extends 'estate/navbar.html' %}
+{% block content %}
+
+<div class="row service-v1 margin-bottom-40">
+    {% for agent in agents %}
+    <div class="col-md-4 md-margin-bottom-40">
+        
+        <div class="card small">
+            <!-- Team Member -->
+            <div class="team-member">
+                <!-- Image -->
+                <div class="card-image">
+                    <img class="img-responsive" src={{agent.image.url}} alt="">   
+               </div>
+                <!-- Name -->
+                <div class="card-content"> 
+                    <p>
+                        <span class="deg">{{agent.name}}</span>
+                        <span class="deg">{{agent.phone_number}}</span>
+                        <span class="deg">{{agent.email}}</span>
+                        
+                    </p>
+                </div>
+                 
+            </div>
+        </div>
+        
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'estate/navbar.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="card-body w-75 p-1 ">
+    <form method="post">
+                    
+        {% csrf_token %}
+        {{form.as_p}}
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    
+    </form>
+</div>      
+{% endblock content %}
+
+
+

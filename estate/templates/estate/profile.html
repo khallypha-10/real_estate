@@ -1,0 +1,34 @@
+{% extends 'estate/navbar.html' %}
+
+{% block content %}
+
+<div class="row service-v1 margin-bottom-40">
+            
+    <div class="col-md-4 md-margin-bottom-40">
+        
+            <div class="card small">
+                
+                <div class="card-image">
+                     <img class="img-responsive" src={{user.agent.image.url}} alt="">   
+                </div>
+                <div class="card-content"> 
+                    <p>
+                        <h4>{{user.agent.name}}</h4>
+                        <h4>{{user.agent.email}}</h4>
+                        <h5>{{user.agent.phone_number}}</h5>
+                        <a href="{% url 'edit-profile' user.id%}">Edit profile</a>
+                    </p>
+                </div>
+                
+            </div>   
+               
+    
+             
+    </div>
+
+
+</div>
+
+
+
+{% endblock content %}

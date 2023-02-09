@@ -1,0 +1,70 @@
+{% extends 'estate/navbar.html' %}
+{% block content %}
+ 
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<div id="wrapper"> 
+	
+
+	<!-- start header -->
+	<!-- end header -->
+	<section id="inner-headline">
+	<div class="container">
+	
+		<div class="row">
+			<div class="col-lg-12">
+				<h2 class="pageTitle">Pricing</h2>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section id="content">
+<section id="pricing">
+        <div class="container">
+           <div class="row"> 
+							<div class="col-md-12">
+								<div class="about-logo">
+									<h3>Our Price<span class="color">List</span></h3>
+									<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
+                                    	<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
+								</div>  
+							</div>
+						</div>
+
+						
+
+            <div class="row"> 
+			<div class="col-md-4 menuItem">     
+                                
+                        </div>
+						
+						<div class="col-md-4 menuItem">   
+							
+                            <ul class="menu">
+							
+                                <li>
+                                    House
+									{% for p in house %}
+									 </li><li>
+                                    <div class="detail">{{p.name}}<span class="price">${{p.price}}</span></div>
+									 </li><li>
+									
+                                </li> 
+								<li>
+								<a href="{% url 'detail' p.id %}" class="btn btn-primary waves-effect waves-dark">View House</a></li>
+								<li></li>
+								{% endfor %}
+                            </ul>
+                        </div>
+						
+			</div>
+        </div>
+    </section>
+	</section>
+
+	
+	
+	{% endblock content %}
